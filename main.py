@@ -74,7 +74,6 @@ def main():
 
     print(f"Sum of values is {tree.fold(lambda x,y: x+y, 0)}")
     print(f"Largest value is {tree.fold(lambda x,y: max(x, y), -10000)}")
-    print(f"Depth of the tree is {tree.depth()}")
     print(f"Sum of squared values is {square_tree.fold(lambda x,y:x+y, 0)}")
 
 
