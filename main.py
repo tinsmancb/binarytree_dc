@@ -38,13 +38,6 @@ class BTree:
     def tolist(self):
         return [data for data in self.inorder()]
 
-    def reorder(self):
-        newroot = BTree()
-        newroot.append(self.inorder())
-        self.data = newroot.data
-        self.left = newroot.left
-        self.right = newroot.right
-
     def map(self, f):
         # f(x) unary function
         newtree = BTree()
