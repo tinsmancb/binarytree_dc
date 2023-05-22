@@ -35,13 +35,24 @@ class BTree:
                 for r in right.inorder():
                     yield r
 
+    def preorder(self):
+        match self:
+            case BTree(None, _, _):
+                pass
+            case BTree(data, left, right):
+                yield data
+                for l in left.inorder():
+                    yield l
+                for r in right.inorder():
+                    yield r
+
     def tolist(self):
         return [data for data in self.inorder()]
 
     def map(self, f):
         # f(x) unary function
         newtree = BTree()
-        for node in self.inorder():
+        for node in self.preorder():
             newtree.insert(f(node))
         return newtree
 
