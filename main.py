@@ -94,6 +94,16 @@ class BTree:
                 except TypeError:
                     pass
 
+    def __contains__(self, item):
+        match self:
+            case BTree(None, _, _):
+                return False
+            case BTree(data, left, right):
+                if data == item:
+                    return True
+                else:
+                    return (item in left) or (item in right)
+
 
 def main():
     tree_unbalanced = BTree()
