@@ -82,7 +82,6 @@ class BTree:
             case BTree(None, _, _):
                 pass
             case BTree(data, left, right):
-
                 try:
                     if left.data >= data:
                         raise ValueError(f"Left side {left.data} is bigger than current node {data}")
